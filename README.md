@@ -53,7 +53,7 @@ To run the app simply follow these steps:
 
 <ol>
 <li>Clone the repository.
-<pre><code>git clone https://github.com/yashodharpatel/Codingpeer.git</code></pre></li>
+<pre><code>git clone https://github.com/prernamahabare/Codingpeer.git</code></pre></li>
 
 <li>Open the terminal or Command Prompt and navigate to the project directory.</li>
 
