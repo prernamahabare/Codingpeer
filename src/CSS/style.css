@@ -124,7 +124,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0% 5%;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 72px);
 }
 
 .intro-section,
@@ -137,7 +137,7 @@ body {
 }
 
 .intro-section .intro-text {
-  font-size: 400%;
+  font-size: 350%;
 }
 
 /*Modal*/

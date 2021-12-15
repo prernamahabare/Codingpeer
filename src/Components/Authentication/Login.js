@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <>
       <Link
-        className="btn btn-primary btn-lg login-btn"
+        className="btn btn-primary login-btn"
         data-bs-toggle="modal"
         to="#login"
         role="button"

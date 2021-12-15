@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../Contexts/Authcontext";
 import { auth, database, storage } from "../../firebase";
 
@@ -12,6 +12,7 @@ export default function Account() {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   const handleUpdateEmail = async (e) => {
     e.preventDefault();
@@ -32,23 +33,20 @@ export default function Account() {
   };
 
   const deleteAccount = async () => {
-    const deleteAccount = confirm("Are you sure you want to delete account?");
-
-    if (deleteAccount) {
-      try {
-        setLoading(true);
-        setMessage("");
-        setError("Deleting Account..");
-        await database.ref("users/" + currentUserId).remove();
-        await storage.ref(`/profile-pictures/${currentUserId}`).delete();
-        await auth.currentUser.delete();
-        setError("");
-        alert("Account deleted Successfully!");
-        history.push("/");
-      } catch {
-        setError("Failed to delete account");
-      }
+    try {
+      setLoading(true);
+      setMessage("");
+      setError("Deleting Account..");
+      await database.ref("users/" + currentUserId).remove();
+      await storage.ref(`/profile-pictures/${currentUserId}`).delete();
+      await auth.currentUser.delete();
+      setError("");
+      alert("Account deleted Successfully!");
+      history.push("/");
+    } catch {
+      setError("Failed to delete account");
     }
+
     setLoading(false);
   };
 

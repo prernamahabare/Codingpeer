@@ -8,7 +8,7 @@ import Password from "../Components/Editprofile/Password";
 import Footer from "../Components/Footer";
 
 export default function Editprofile() {
-  const [componentToRender, setComponentToRender] = useState("PersonalDetails");
+  const [componentToRender, setComponentToRender] = useState("ProfileDetails");
 
   return (
     <div>

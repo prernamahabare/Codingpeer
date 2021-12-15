@@ -28,10 +28,10 @@ export default function Signup() {
       await signup(emailRef.current.value, passwordRef.current.value);
       history.push("/create-account");
       document.querySelector(".modal-backdrop").remove();
-    } catch {
+    } catch(e){
+      console.log(e);
       setError("Failed to create an account");
     }
-
     setLoading(false);
   }
 
